@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasty Bites - Food Outlet</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><i class="fas fa-utensils"></i> Tasty Bites</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="menu.html" class="nav-link">Menu</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="login.html" class="nav-link login-btn">Login</a></li>
+                <li><a href="#" class="nav-link cart-btn" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Delicious Food Delivered Fresh</h1>
+            <p>Experience the finest flavors from our kitchen to your table</p>
+            <button class="cta-btn" onclick="location.href='menu.html'">Order Now</button>
+        </div>
+        <div class="hero-image">
+            <img src="/placeholder.svg?height=400&width=600" alt="Delicious Food">
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="featured-categories">
+        <div class="container">
+            <h2>Our Categories</h2>
+            <div class="categories-grid">
+                <div class="category-card" onclick="location.href='menu.html#pizza'">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Pizza">
+                    <h3>Pizza</h3>
+                    <p>Fresh & Hot</p>
+                </div>
+                <div class="category-card" onclick="location.href='menu.html#burgers'">
+                    <img src="https://www.bing.com/th/id/OIP.9vOj25uyE-Aj7RUw1WM2xgHaE8?w=222&h=211&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" alt="Burgers">
+                    <h3>Burgers</h3>
+                    <p>Juicy & Tasty</p>
+                </div>
+                <div class="category-card" onclick="location.href='menu.html#pasta'">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Pasta">
+                    <h3>Pasta</h3>
+                    <p>Italian Style</p>
+                </div>
+                <div class="category-card" onclick="location.href='menu.html#desserts'">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Desserts">
+                    <h3>Desserts</h3>
+                    <p>Sweet Treats</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Tasty Bites</h2>
+                    <p>We are passionate about serving delicious, fresh food made with the finest ingredients. Our chefs craft each dish with love and attention to detail.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Fresh Ingredients</li>
+                        <li><i class="fas fa-check"></i> Fast Delivery</li>
+                        <li><i class="fas fa-check"></i> 24/7 Service</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <img src="/placeholder.svg?height=300&width=400" alt="Restaurant">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <h3>Phone</h3>
+                    <p>+91 9118823758</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>spriyam079@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Address</h3>
+                    <p>123 Food Street, Greater Noida</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" onclick="toggleCart()">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be added here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: Rs<span id="cartTotal">0.00</span></strong>
+            </div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Tasty Bites. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

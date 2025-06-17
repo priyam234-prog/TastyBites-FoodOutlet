@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Tasty Bites</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><i class="fas fa-utensils"></i> Tasty Bites</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="menu.html" class="nav-link active">Menu</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li><a href="login.html" class="nav-link login-btn">Login</a></li>
+                <li><a href="#" class="nav-link cart-btn" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Header -->
+    <section class="menu-header">
+        <div class="container">
+            <h1>Our Menu</h1>
+            <p>Discover our delicious selection of food</p>
+        </div>
+    </section>
+
+    <!-- Menu Categories -->
+    <section class="menu-categories">
+        <div class="container">
+            <div class="category-filters">
+                <button class="filter-btn active" onclick="filterMenu('all')">All</button>
+                <button class="filter-btn" onclick="filterMenu('pizza')">Pizza</button>
+                <button class="filter-btn" onclick="filterMenu('burgers')">Burgers</button>
+                <button class="filter-btn" onclick="filterMenu('pasta')">Pasta</button>
+                <button class="filter-btn" onclick="filterMenu('desserts')">Desserts</button>
+            </div>
+
+            <!-- Pizza Section -->
+            <div class="menu-section" id="pizza">
+                <h2>Pizza</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-category="pizza">
+                        <img src="/placeholder.svg?height=250&width=300" alt="Margherita Pizza">
+                        <div class="item-info">
+                            <h3>Margherita Pizza</h3>
+                            <p>Fresh tomatoes, mozzarella, basil</p>
+                            <div class="item-price">Rs129</div>
+                            <button class="add-to-cart" onclick="addToCart('Margherita Pizza', 129)">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-category="pizza">
+                        <img src="/placeholder.svg?height=250&width=300" alt="Pepperoni Pizza">
+                        <div class="item-info">
+                            <h3>Pepperoni Pizza</h3>
+                            <p>Pepperoni, mozzarella, tomato sauce</p>
+                            <div class="item-price">Rs149</div>
+                            <button class="add-to-cart" onclick="addToCart('Pepperoni Pizza', 149)">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-category="pizza">
+                        <img src="/placeholder.svg?height=250&width=300" alt="Supreme Pizza">
+                        <div class="item-info">
+                            <h3>Supreme Pizza</h3>
+                            <p>Pepperoni, sausage, peppers, onions</p>
+                            <div class="item-price">Rs169</div>
+                            <button class="add-to-cart" onclick="addToCart('Supreme Pizza', 169)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Burgers Section -->
+            <div class="menu-section" id="burgers">
+                <h2>Burgers</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-category="burgers">
+                        <img src="/placeholder.svg?height=250&width=300" alt="Classic Burger">
+                        <div class="item-info">
+                            <h3>Classic Burger</h3>
+                            <p>Beef patty, lettuce, tomato, onion</p>
+                            <div class="item-price">Rs99</div>
+                            <button class="add-to-cart" onclick="addToCart('Classic Burger', 99)">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-category="burgers">
+                        <img src="/placeholder.svg?height=250&width=300" alt="Cheese Burger">
+                        <div class="item-info">
+                            <h3>Cheese Burger</h3>
+                            <p>Beef patty, cheese, lettuce, tomato</p>
+                            <div class="item-price">Rs109</div>
+                            <button class="add-to-cart" onclick="addToCart('Cheese Burger', 109)">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-category="burgers">
+                        <img src="/placeholder.svg?height=250&width=300" alt="BBQ Burger">
+                        <div class="item-info">
+                            <h3>BBQ Burger</h3>
+                            <p>Beef patty, BBQ sauce, onion rings</p>
+                            <div class="item-price">Rs129</div>
+                            <button class="add-to-cart" onclick="addToCart('BBQ Burger', 129)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pasta Section -->
+            <div class="menu-section" id="pasta">
+                <h2>Pasta</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-category="pasta">
+                        <img src="/placeholder.svg?height=250&width=300" alt="Spaghetti Carbonara">
+                        <div class="item-info">
+                            <h3>Spaghetti Carbonara</h3>
+                            <p>Spaghetti, bacon, eggs, parmesan</p>
+                            <div class="item-price">Rs139</div>
+                            <button class="add-to-cart" onclick="addToCart('Spaghetti Carbonara', 139)">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-category="pasta">
+                        <img src="/placeholder.svg?height=250&width=300" alt="Penne Arrabbiata">
+                        <div class="item-info">
+                            <h3>Penne Arrabbiata</h3>
+                            <p>Penne pasta, spicy tomato sauce</p>
+                            <div class="item-price">Rs119</div>
+                            <button class="add-to-cart" onclick="addToCart('Penne Arrabbiata', 119)">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-category="pasta">
+                        <img src="/placeholder.svg?height=250&width=300" alt="Fettuccine Alfredo">
+                        <div class="item-info">
+                            <h3>Fettuccine Alfredo</h3>
+                            <p>Fettuccine, creamy alfredo sauce</p>
+                            <div class="item-price">Rs129</div>
+                            <button class="add-to-cart" onclick="addToCart('Fettuccine Alfredo', 129)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desserts Section -->
+            <div class="menu-section" id="desserts">
+                <h2>Desserts</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-category="desserts">
+                        <img src="/placeholder.svg?height=250&width=300" alt="Chocolate Cake">
+                        <div class="item-info">
+                            <h3>Chocolate Cake</h3>
+                            <p>Rich chocolate cake with frosting</p>
+                            <div class="item-price">Rs69</div>
+                            <button class="add-to-cart" onclick="addToCart('Chocolate Cake', 69)">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-category="desserts">
+                        <img src="/placeholder.svg?height=250&width=300" alt="Tiramisu">
+                        <div class="item-info">
+                            <h3>Tiramisu</h3>
+                            <p>Classic Italian dessert</p>
+                            <div class="item-price">Rs79</div>
+                            <button class="add-to-cart" onclick="addToCart('Tiramisu', 79)">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-category="desserts">
+                        <img src="/placeholder.svg?height=250&width=300" alt="Ice Cream">
+                        <div class="item-info">
+                            <h3>Ice Cream</h3>
+                            <p>Vanilla, chocolate, or strawberry</p>
+                            <div class="item-price">Rs49</div>
+                            <button class="add-to-cart" onclick="addToCart('Ice Cream', 49)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" onclick="toggleCart()">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be added here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: Rs<span id="cartTotal">0.00</span></strong>
+            </div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Tasty Bites. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
